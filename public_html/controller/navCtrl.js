@@ -12,5 +12,7 @@ app.controller('navController', function ($scope, servicecall) {
         } else {
             alert("this does not have submenu");
         }
+        
+        
     }
 });
