@@ -11,7 +11,32 @@
     <body>
         <div class="mainContainer" ng-controller="mainController">
             <div class="warper">
-                <div class="leftNav">Left Navigation</div>
+                <div class="leftNav">
+                    <div class="logoSection">Logo</div>
+                    <div class="lNavigation" ng-controller="navController">
+                        <ul class="nav1">
+                            <li>
+                                <a href="javascript:void(0);" ng-click="navExpand($event, 1)">Link 1</a>
+                                <ul class="nav2" ng-show="subnav == 1 && navToggle == 1">
+                                    <li><a href="javascript:void(0);">Link 1_1</a></li>
+                                    <li><a href="javascript:void(0);">Link 1_2</a></li>
+                                    <li><a href="javascript:void(0);">Link 1_3</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="javascript:void(0);" ng-click="navExpand($event, 0)">Link 2</a></li>
+                            <li>
+                                <a href="javascript:void(0);" ng-click="navExpand($event, 3)">Link 3</a>
+                                <ul class="nav2" ng-show="subnav == 3 && navToggle == 1">
+                                    <li><a href="javascript:void(0);">Link 3_1</a></li>
+                                    <li><a href="javascript:void(0);">Link 3_2</a></li>
+                                    <li><a href="javascript:void(0);">Link 3_3</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="javascript:void(0);" ng-click="navExpand($event, 0)">Link 4</a></li>
+                            <li><a href="javascript:void(0);" ng-click="navExpand($event, 0)">Link 5</a></li>
+                        </ul>
+                    </div>
+                </div>
                 <div class="rightBody">
                     <div class="headerContainer">Header Container</div>
                     <div class="bodyContainer">Body Container</div>
@@ -37,5 +62,6 @@
         <script src="services/services.js" type="text/javascript"></script>
 
         <script src="controller/mainCtrl.js" type="text/javascript"></script>
+        <script src="controller/navCtrl.js" type="text/javascript"></script>
     </body>
 </html>
