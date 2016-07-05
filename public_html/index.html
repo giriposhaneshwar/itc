@@ -14,6 +14,7 @@
                 <div class="leftNav">
                     <div class="logoSection">Logo</div>
                     <div class="lNavigation" ng-controller="navController">
+                        <!--                        
                         <ul class="nav1">
                             <li>
                                 <a href="javascript:void(0);" ng-click="navExpand($event, 1)">
@@ -41,6 +42,21 @@
                             </li>
                             <li><a href="javascript:void(0);" ng-click="navExpand($event, 0)">Link 4</a></li>
                             <li><a href="javascript:void(0);" ng-click="navExpand($event, 0)">Link 5</a></li>
+                        </ul>
+                        -->
+
+                        <ul class="nav1">
+                            <li ng-repeat="(k, item) in navItems">
+                                <a ng-href="{{item.link}}" ng-click="navExpand($event, k + 1)">
+                                    {{item.name}}
+                                    <i class="glyphicon" ng-class="(subnav == k + 1 && navToggle == 1) ? 'glyphicon-triangle-bottom' : 'glyphicon-triangle-right'"  ng-if="item.subnav.length > 0"></i>
+                                </a>
+                                <ul class="nav2" ng-show="subnav == k + 1 && navToggle == 1" ng-if="item.subnav.length > 0">
+                                    <li ng-repeat="(a, b) in item.subnav">
+                                        <a ng-href="{{b.link}}">{{b.name}}</a>
+                                    </li>
+                                </ul>
+                            </li>
                         </ul>
                     </div>
                 </div>
