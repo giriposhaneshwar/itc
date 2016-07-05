@@ -2,6 +2,12 @@ app.controller('navController', function ($scope, servicecall) {
 
     $scope.showMessage = "Navigation Page";
 
+    $scope.navItems = [
+        {name: "Dashboard", link: "/dashboard"},
+        {name: "Home", link: "/home"},
+        {name: "Login", link: "/login"}
+    ];
+
     $scope.subnav = 1;
     $scope.navToggle = 0;
 
@@ -12,7 +18,7 @@ app.controller('navController', function ($scope, servicecall) {
         } else {
             alert("this does not have submenu");
         }
-        
-        
+
+
     }
 });

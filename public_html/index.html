@@ -16,7 +16,10 @@
                     <div class="lNavigation" ng-controller="navController">
                         <ul class="nav1">
                             <li>
-                                <a href="javascript:void(0);" ng-click="navExpand($event, 1)">Link 1</a>
+                                <a href="javascript:void(0);" ng-click="navExpand($event, 1)">
+                                    Link 1
+                                    <i class="glyphicon" ng-class="(subnav == 1 && navToggle == 1) ? 'glyphicon-triangle-bottom' : 'glyphicon-triangle-right'"></i>
+                                </a>
                                 <ul class="nav2" ng-show="subnav == 1 && navToggle == 1">
                                     <li><a href="javascript:void(0);">Link 1_1</a></li>
                                     <li><a href="javascript:void(0);">Link 1_2</a></li>
@@ -25,7 +28,11 @@
                             </li>
                             <li><a href="javascript:void(0);" ng-click="navExpand($event, 0)">Link 2</a></li>
                             <li>
-                                <a href="javascript:void(0);" ng-click="navExpand($event, 3)">Link 3</a>
+                                <a href="javascript:void(0);" ng-click="navExpand($event, 3)">
+                                    Link 3
+                                    <i class="glyphicon" ng-class="(subnav == 3 && navToggle == 1) ? 'glyphicon-triangle-bottom' : 'glyphicon-triangle-right'"></i>
+
+                                </a>
                                 <ul class="nav2" ng-show="subnav == 3 && navToggle == 1">
                                     <li><a href="javascript:void(0);">Link 3_1</a></li>
                                     <li><a href="javascript:void(0);">Link 3_2</a></li>
@@ -39,7 +46,9 @@
                 </div>
                 <div class="rightBody">
                     <div class="headerContainer">Header Container</div>
-                    <div class="bodyContainer">Body Container</div>
+                    <div class="bodyContainer">
+                        <div ng-view></div>
+                    </div>
                     <div class="footerContainer">footer Container</div>
                 </div>
             </div>
@@ -63,5 +72,9 @@
 
         <script src="controller/mainCtrl.js" type="text/javascript"></script>
         <script src="controller/navCtrl.js" type="text/javascript"></script>
+
+        <script src="controller/homeCtrl.js" type="text/javascript"></script>
+        <script src="controller/loginCtrl.js" type="text/javascript"></script>
+        <script src="controller/dashboardCtrl.js" type="text/javascript"></script>
     </body>
 </html>
