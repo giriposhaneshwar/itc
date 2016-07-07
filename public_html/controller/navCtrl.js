@@ -24,7 +24,7 @@ app.controller('navController', function ($scope, servicecall) {
             $scope.subnav = lvl;
             $scope.navToggle = $scope.navToggle == 0 ? 1 : 0;
         } else {
-            alert("this does not have submenu");
+//            alert("this does not have submenu");
         }
 
 

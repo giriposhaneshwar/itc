@@ -1,4 +1,4 @@
-var app = angular.module("itcApp", ['ngRoute']);
+var app = angular.module("itcApp", ['ngRoute', 'ngAnimate']);
 
 app.config(function ($routeProvider, $locationProvider) {
     $routeProvider

@@ -47,7 +47,7 @@
 
                         <ul class="nav1">
                             <li ng-repeat="(k, item) in navItems">
-                                <a ng-href="{{item.link}}" ng-click="navExpand($event, k + 1)">
+                                <a ng-href="{{item.link}}" ng-click="navExpand($event, k + 1)" >
                                     {{item.name}}
                                     <i class="glyphicon" ng-class="(subnav == k + 1 && navToggle == 1) ? 'glyphicon-triangle-bottom' : 'glyphicon-triangle-right'"  ng-if="item.subnav.length > 0"></i>
                                 </a>
