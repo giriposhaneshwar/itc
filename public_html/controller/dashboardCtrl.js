@@ -2,13 +2,8 @@ app.controller('dashboardController', function ($scope, servicecall) {
 
     $scope.showMessage = "dashboard Page";
 
-    servicecall.dashboardOnLoad();
+    servicecall.dashboardOnLoad("k", function (d) {
+        console.log("$scope.dashboardData", d);
+    });
+
 });
-
-(function($scope){
-	'use strict';
-        $scope.varibale = "valeu";
-	var iifi = "iifi in iffi";
-}());
-
-var ifi = "external ifi";

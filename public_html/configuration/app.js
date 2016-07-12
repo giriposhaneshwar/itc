@@ -4,19 +4,19 @@ app.config(function ($routeProvider, $locationProvider) {
     $routeProvider
             .when("/login",
                     {
-                        templateUrl: "./view/login.html",
+                        templateUrl: "./views/login.html",
                         controller: "loginController",
                     }
             )
             .when("/home",
                     {
-                        templateUrl: "./view/home.html",
+                        templateUrl: "./views/home.html",
                         controller: "homeController",
                     }
             )
             .when("/dashboard",
                     {
-                        templateUrl: "./view/dashboard.html",
+                        templateUrl: "./views/dashboard.html",
                         controller: "dashboardController",
                     }
             )

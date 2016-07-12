@@ -1,4 +1,4 @@
-app.service('servicecall', function (websql) {
+app.service('servicecall', function (websql, $q, $http, $log) {
     var obj = new Object();
 
     obj.getData = function () {
@@ -6,12 +6,34 @@ app.service('servicecall', function (websql) {
         console.log("From Service", route.homePage);
 
     };
-    
-    obj.dashboardOnLoad = function (data) {
+    obj.getService = function (type, url, data) {
+
+        $http[type](url, data).then(function (d) {
+            console.log("dddd", d);
+        });
+    }
+
+    obj.dashboardOnLoad = function (data, cb) {
         var url = serverUrl + route.dashboard;
         var request = data;
+        var deferred = $q.defer();
+//        $http.get(url)
+//                .success(function (d) {
+//                    if (cb)
+//                        cb(d);
+//                    console.log("hhhhhhh\n", d);
+//                    deferred.resolve(d);
+//                })
+//                .error(function (msg, code) {
+//                    if (cb)
+//                        cb(msg);
+//                    console.log(msg, code);
+//                    deferred.reject(msg);
+//                    $log.error(msg, code);
+//                });
 
-        console.log("URL", url);
+        obj.getService('get', url, data);
+
     };
 
     return obj;
