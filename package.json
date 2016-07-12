@@ -1,8 +1,17 @@
 {
-    "name": "itc",
-    "version": "1.0.0",
-    "keywords": ["util", "functional", "server", "client", "browser"],
-    "author": "techvedika",
-    "contributors": [],
-    "dependencies": {}
+  "name": "itc",
+  "version": "1.0.0",
+  "keywords": [
+    "util",
+    "functional",
+    "server",
+    "client",
+    "browser"
+  ],
+  "author": "techvedika",
+  "contributors": [],
+  "dependencies": {},
+  "devDependencies": {
+    "gulp-sass": "^2.3.2"
+  }
 }

@@ -1,3 +1,4 @@
+var serverUrl = "/itc/itcServer";
 var route = {
-    homePage: "home/getAllData"
+    dashboard: "/dashboard/getAllData"
 };

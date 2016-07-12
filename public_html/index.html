@@ -14,44 +14,13 @@
                 <div class="leftNav">
                     <div class="logoSection">Logo</div>
                     <div class="lNavigation" ng-controller="navController">
-                        <!--                        
                         <ul class="nav1">
-                            <li>
-                                <a href="javascript:void(0);" ng-click="navExpand($event, 1)">
-                                    Link 1
-                                    <i class="glyphicon" ng-class="(subnav == 1 && navToggle == 1) ? 'glyphicon-triangle-bottom' : 'glyphicon-triangle-right'"></i>
-                                </a>
-                                <ul class="nav2" ng-show="subnav == 1 && navToggle == 1">
-                                    <li><a href="javascript:void(0);">Link 1_1</a></li>
-                                    <li><a href="javascript:void(0);">Link 1_2</a></li>
-                                    <li><a href="javascript:void(0);">Link 1_3</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="javascript:void(0);" ng-click="navExpand($event, 0)">Link 2</a></li>
-                            <li>
-                                <a href="javascript:void(0);" ng-click="navExpand($event, 3)">
-                                    Link 3
-                                    <i class="glyphicon" ng-class="(subnav == 3 && navToggle == 1) ? 'glyphicon-triangle-bottom' : 'glyphicon-triangle-right'"></i>
-
-                                </a>
-                                <ul class="nav2" ng-show="subnav == 3 && navToggle == 1">
-                                    <li><a href="javascript:void(0);">Link 3_1</a></li>
-                                    <li><a href="javascript:void(0);">Link 3_2</a></li>
-                                    <li><a href="javascript:void(0);">Link 3_3</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="javascript:void(0);" ng-click="navExpand($event, 0)">Link 4</a></li>
-                            <li><a href="javascript:void(0);" ng-click="navExpand($event, 0)">Link 5</a></li>
-                        </ul>
-                        -->
-
-                        <ul class="nav1">
-                            <li ng-repeat="(k, item) in navItems">
-                                <a ng-href="{{item.link}}" ng-click="navExpand($event, k + 1)" >
+                            <li ng-repeat="(k, item) in navItems" ng-mouseover="arrow = true" ng-mouseleave="arrow = false">
+                                <a ng-href="{{item.link}}">
                                     {{item.name}}
-                                    <i class="glyphicon" ng-class="(subnav == k + 1 && navToggle == 1) ? 'glyphicon-triangle-bottom' : 'glyphicon-triangle-right'"  ng-if="item.subnav.length > 0"></i>
+                                    <i class="glyphicon " ng-class="arrow == true ? 'glyphicon-triangle-bottom' : 'glyphicon-triangle-right'"  ng-if="item.subnav.length > 0"></i>
                                 </a>
-                                <ul class="nav2" ng-show="subnav == k + 1 && navToggle == 1" ng-if="item.subnav.length > 0">
+                                <ul class="nav2" ng-if="item.subnav.length > 0">
                                     <li ng-repeat="(a, b) in item.subnav">
                                         <a ng-href="{{b.link}}">{{b.name}}</a>
                                     </li>
