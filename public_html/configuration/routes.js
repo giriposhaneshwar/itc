@@ -1,12 +1,18 @@
+var route, path, getHash, orgUrl, serverUrl;
+(function () {
+    'use strict';
+    path = window.location.href;
+    getHash = window.location.hash;
 
-var path = window.location.href;
-var getHash = window.location.hash;
+    orgUrl = path.replace(getHash, "");
+    orgUrl = orgUrl.replace("8383", "80");  // this is tempruary solution
+    serverUrl = orgUrl + "itcServer";
+//console.log("Service Url", serverUrl);
 
-var orgUrl = path.replace(getHash, "");
-var orgUrl = orgUrl.replace("8383", "80");  // this is tempruary solution
-var serverUrl = orgUrl + "itcServer";
-//alert(serverUrl);
-console.log("Service Url", serverUrl);
-var route = {
-    dashboard: "/dashboard/getAllData"
-};
+
+    route = {
+        dashboard: "/dashboard/getAllData",
+        checkLogin: "/login/checkLogin"
+    };
+
+}());
